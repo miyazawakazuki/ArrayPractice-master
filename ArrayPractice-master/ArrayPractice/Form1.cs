@@ -27,14 +27,14 @@ namespace ArrayPractice
         {
             InitializeComponent();
 
-            /*label1.Left = rand.Next(ClientSize.Width - label1.Width);
+            label1.Left = rand.Next(ClientSize.Width - label1.Width);
             label1.Top = rand.Next(ClientSize.Height - label1.Height);
 
             label2.Left = rand.Next(ClientSize.Width - label2.Width);
             label2.Top = rand.Next(ClientSize.Height - label2.Height);
 
             label3.Left = rand.Next(ClientSize.Width - label3.Width);
-            label3.Top = rand.Next(ClientSize.Height - label3.Height);*/
+            label3.Top = rand.Next(ClientSize.Height - label3.Height);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace ArrayPractice
             label1.Left += vx;
             label1.Top += vy;
             label2.Left += vvx;
-            label2.Top += vvx;
+            label2.Top += vvy;
             label3.Left += vvxx;
             label3.Top += vvyy;
 
