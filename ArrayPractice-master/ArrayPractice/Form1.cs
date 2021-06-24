@@ -82,6 +82,11 @@ namespace ArrayPractice
                     labels[i].Visible = false;
                 }
 
+               if(labels[i].Visible==false)
+                {
+                    timer1.Enabled = false;
+                }
+
             }
 
 
@@ -89,7 +94,7 @@ namespace ArrayPractice
                 &&(label2.Visible==false)
                 &&(label3.Visible==false))
             {
-                //timer1.Enabled = false;
+                timer1.Enabled = false;
             }
 
         }
