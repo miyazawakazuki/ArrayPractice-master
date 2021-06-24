@@ -16,6 +16,11 @@ namespace ArrayPractice
 
         int vx = rand.Next(-20, 21);
         int vy = rand.Next(-20, 21);
+        int vvx = rand.Next(-20, 21);
+        int vvy = rand.Next(-20, 21);
+        int vvxx = rand.Next(-20, 21);
+        int vvyy = rand.Next(-20, 21);
+
         int score = 100;
 
         public Form1()
@@ -24,6 +29,9 @@ namespace ArrayPractice
 
             label1.Left = rand.Next(ClientSize.Width - label1.Width);
             label1.Top = rand.Next(ClientSize.Height - label1.Height);
+
+            label2.Left = rand.Next(ClientSize.Width - label2.Width);
+            label2.Top = rand.Next(ClientSize.Height - label2.Height);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -33,6 +41,8 @@ namespace ArrayPractice
 
             label1.Left += vx;
             label1.Top += vy;
+            label2.Left += vvx;
+            label2.Top += vvx;
 
             if (label1.Left < 0)
             {
@@ -51,6 +61,23 @@ namespace ArrayPractice
                 vy = -Math.Abs(vy);
             }
 
+            if (label2.Left < 0)
+            {
+                vx = Math.Abs(vvx);
+            }
+            if (label2.Top < 0)
+            {
+                vy = Math.Abs(vvy);
+            }
+            if (label2.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vvx);
+            }
+            if (label2.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vvy);
+            }
+
             Point fpos = PointToClient(MousePosition);
 
             if ((fpos.X >= label1.Left)
@@ -60,6 +87,16 @@ namespace ArrayPractice
             {
                 timer1.Enabled = false;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
